@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="483422e3-8f7e-4c7f-96c4-8fea0a7cbe53">
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="jenkinstestFlow" doc:id="09d01aba-8f0f-423c-a6ce-96c251590308" >
+		<http:listener doc:name="Listener" doc:id="caf324bf-4638-4f6d-9473-5f148fbf6783" path="/api/jenkins_test" config-ref="HTTP_Listener_config"/>
+		<set-payload value='#["Hello, my jenkins automatic deployment"]' doc:name="Set Payload" doc:id="f250b648-d7ed-47ac-bbe8-c05d739ac8c0" />
+	</flow>
+</mule>
