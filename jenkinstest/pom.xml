@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -27,29 +27,30 @@
 				<configuration>
 					<cloudHubDeployment>
 				    <uri>https://anypoint.mulesoft.com</uri>
-				    <!-- <muleVersion>${mule.version}</muleVersion> -->
-				    <muleVersion>4.3.0</muleVersion>
+				    <muleVersion>${mule.version}</muleVersion>
+				    <!-- <muleVersion>4.3.0</muleVersion> -->
 				   
 				    <!-- Deploy User Parameter -->
-				    <!-- <username>${anypoint.username}</username> -->
-				    <username>mamanemati</username>
-				    <!-- <password>${anypoint.password}</password> -->
-				    <password>Zain97451863</password>
+				    <username>${anypoint.username}</username>
+				    <!-- <username>mamanemati</username> -->
+				    <password>${anypoint.password}</password>
+				    <!-- <password>Zain97451863</password> -->
 				   
 				    <!-- Environment Parameter -->
-				    <!-- <environment>${cloudhub.environment}</environment> -->
-				    <environment>Sandbox</environment>
-				    <!-- <applicationName>${cloudhub.app}</applicationName> -->
-				    <applicationName>jenkinstest</applicationName>
-				    <!-- <businessGroup>${cloudhub.bg}</businessGroup> -->
-				    <businessGroup>mycompany</businessGroup>
-				    <!-- <workerType>${cloudhub.worker}</workerType> -->
-				    <workerType>Micro</workerType>
+				    <environment>${cloudhub.environment}</environment>
+				    <!-- <environment>Sandbox</environment> -->
+				    <applicationName>${cloudhub.app}</applicationName>
+				    <!-- <applicationName>jenkinstest</applicationName> -->
+				    <businessGroup>${cloudhub.bg}</businessGroup>
+				    <!-- <businessGroup>mycompany</businessGroup> -->
+				    <workerType>${cloudhub.worker}</workerType>
+				    <!-- <workerType>Micro</workerType> -->
 				    
 				    <objectStoreV2>true</objectStoreV2>
 				
 				</cloudHubDeployment>
-				</configuration>
+				<classifier>mule-application</classifier>
+                </configuration>
 			</plugin>
 		</plugins>
 	</build>
